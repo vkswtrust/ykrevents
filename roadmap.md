@@ -1,0 +1,5 @@
+- [x] Build YKR continuous-scroll home site and mobile navigation
+- [x] Add supplied Goa photographs in a one-at-a-time viewer and video link
+- [x] Add separate inquiry form with persistent submission
+- [x] Add contact information, WhatsApp, and shared footer
+- [x] Verify desktop/mobile appearance and form submission

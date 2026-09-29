@@ -2,4 +2,4 @@
 - [x] Add supplied Goa photographs in a one-at-a-time viewer and video link
 - [x] Add separate inquiry form with persistent submission
 - [x] Add contact information, WhatsApp, and shared footer
-- [ ] Verify desktop/mobile appearance and form submission
+- [x] Verify desktop/mobile appearance and form submission

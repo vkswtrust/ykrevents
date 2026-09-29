@@ -104,10 +104,10 @@ function Home() {
       <div className="section-intro work-intro"><div><span className="eyebrow"><span className="eyebrow-line" /> MOMENTS THAT MATTER</span><h2>Our Work<span className="accent-dot">.</span></h2></div><p>A glimpse into the experiences we've brought to life.</p></div>
       <div className="work-heading"><div><span className="work-overline">FEATURED PAST EVENT</span><h3>Goa</h3></div><span className="past-label"><span /> PAST EVENT</span></div>
       <GoaCarousel />
-      <a className="video-feature" href="https://www.youtube.com/live/9AkFTixnEMk?si=uCoWoCF9Zekf0TTx" target="_blank" rel="noopener noreferrer" aria-label="Watch the Goa event video on YouTube">
-        <div className="video-thumb"><img src={goa5.url} alt="Players at the Goa event" /><span className="play-circle"><Play size={24} fill="currentColor" /></span></div>
-        <div className="video-copy"><span className="eyebrow">THE GOA EVENT · VIDEO</span><h3>See the event in motion.</h3><p>Watch the full video from Goa on YouTube.</p><span className="video-link">Watch the full video <ArrowUpRight size={18} /></span></div>
-      </a>
+      <div className="video-feature">
+        <a className="video-thumb" href="https://www.youtube.com/live/9AkFTixnEMk?si=uCoWoCF9Zekf0TTx" target="_blank" rel="noopener noreferrer" aria-label="Watch the Goa Monsoon Premier League video on YouTube"><img src={goa5.url} alt="Players at the Goa event" /><span className="play-circle"><Play size={24} fill="currentColor" /></span></a>
+        <div className="video-copy"><span className="eyebrow">THE GOA EVENT · VIDEO &amp; COVERAGE</span><h3>Goa Monsoon Premier League: Goals and entertainment as GFA experiments with new format</h3><blockquote>“The Vasudhaiva Kutumbakam Social Welfare Trust approached us and we had no hesitation in giving this a try. They have bigger and better plans for the future.”</blockquote><p className="quote-credit">— Caitano Fernandes, GFA president, as reported by The Times of India</p><div className="video-links"><a className="video-link" href="https://www.youtube.com/live/9AkFTixnEMk?si=uCoWoCF9Zekf0TTx" target="_blank" rel="noopener noreferrer">Watch the live video <ArrowUpRight size={18} /></a><a className="video-link" href="https://timesofindia.indiatimes.com/city/goa/goa-monsoon-premier-league-goals-and-entertainment-as-gfa-experiments-with-new-format/articleshow/122590412.cms" target="_blank" rel="noopener noreferrer">Read the Times of India article <ArrowUpRight size={18} /></a></div></div>
+      </div>
     </div></section>
 
     <section className="section philosophy-section" id="philosophy"><div className="site-container philosophy-inner">

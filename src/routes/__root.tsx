@@ -139,7 +139,7 @@ function SiteHeader() {
   return <header className="site-header"><div className="site-container header-inner">
     <Link to="/" className="logo-link" aria-label="YKR Events home" onClick={() => setOpen(false)}><img src={logo.url} alt="YKR Events" /></Link>
     <nav className="desktop-nav" aria-label="Main navigation">{navItems.map((item) => <Link key={item.hash} to="/" hash={item.hash}>{item.label}</Link>)}</nav>
-    <Button asChild className="header-inquiry brand-button"><Link to="/inquiry">Inquiry <ArrowUpRight size={16} /></Link></Button>
+    <Button asChild className="header-inquiry brand-button"><Link to="/inquiry" onClick={() => setOpen(false)}>Inquiry <ArrowUpRight size={16} /></Link></Button>
     <Button variant="ghost" size="icon" className="mobile-menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button>
   </div>{open && <nav className="mobile-nav" aria-label="Mobile navigation">{navItems.map((item) => <Link key={item.hash} to="/" hash={item.hash} onClick={() => setOpen(false)}>{item.label}</Link>)}<Link to="/inquiry" onClick={() => setOpen(false)}>Inquiry <ArrowUpRight size={16} /></Link></nav>}</header>;
 }

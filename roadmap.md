@@ -3,3 +3,6 @@
 - [x] Add separate inquiry form with persistent submission
 - [x] Add contact information, WhatsApp, and shared footer
 - [x] Verify desktop/mobile appearance and form submission
+- [ ] Replace displayed logo with newly uploaded artwork and match surrounding dark background
+- [ ] Add Goa Monsoon Premier League details and Times of India article alongside live video
+- [ ] Verify updated pages on desktop and mobile

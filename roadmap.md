@@ -6,3 +6,4 @@
 - [x] Replace displayed logo with newly uploaded artwork and match surrounding dark background
 - [x] Add Goa Monsoon Premier League details and Times of India article alongside live video
 - [x] Verify updated pages on desktop and mobile
+- [ ] Recolor the existing pages, typography, and logo backdrop to the supplied dark reference without changing content or layout

@@ -59,6 +59,7 @@
   --surface-glass: oklch(0.13 0.005 290 / 85%);
   --on-dark: oklch(0.97 0.005 65);
   --on-dark-muted: oklch(0.79 0.009 70);
+  --whatsapp: oklch(0.65 0.2 151);
   --gradient-brand: linear-gradient(100deg, var(--brand-yellow), var(--primary) 43%, var(--brand-pink));
 }
 * { box-sizing: border-box; border-color: var(--border); }

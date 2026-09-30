@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
-const eventTypes = ["Corporate Event", "Cultural Event", "Educational / Institutional Event", "Hybrid Event", "Film Production", "Music", "Live Event", "Original Showcase", "Other"];
+const eventTypes = ["Corporate Event", "Cultural Event", "Educational / Institutional Event", "Hybrid Event", "Workshops", "Private Events", "Film Production", "Music", "Live Event", "Original Showcase", "Other"];
 
 export const Route = createFileRoute("/inquiry")({
   head: () => ({ meta: [

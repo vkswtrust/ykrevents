@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Play, Sparkles, Target } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Instagram, Play, Sparkles, Target } from "lucide-react";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import goa1 from "@/assets/goa-1.webp.asset.json";
@@ -10,8 +10,7 @@ import goa5 from "@/assets/goa-5.webp.asset.json";
 
 const photos = [goa1.url, goa2.url, goa3.url, goa4.url, goa5.url];
 const categories = ["Corporate", "Cultural", "Educational", "Hybrid", "Film", "Music", "Live"];
-const events = ["Corporate Events", "Entertainment & Cultural Events", "Educational", "Institutional Events", "Hybrid Events"];
-const production = ["Film Production", "Music", "Live Events", "Original Showcases"];
+const events = ["Corporate Events", "Entertainment & Cultural Events", "Educational", "Institutional Events", "Hybrid Events", "Workshops", "Private Events"];
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -66,7 +65,7 @@ function Home() {
       <div className="hero-shade" aria-hidden="true" />
       <div className="site-container hero-inner">
         <div className="hero-content">
-          <div className="eyebrow hero-eyebrow"><span className="eyebrow-line" /> YKR EVENTS & PRODUCTIONS</div>
+          <div className="eyebrow hero-eyebrow"><span className="eyebrow-line" /> YKR EVENTS</div>
           <h1>Where<br />grandeur<br /><em>meets soul.</em></h1>
           <p>We craft elegant, soulful events and productions — the kind that move people, and quietly hand the stage back to the talent that deserves it.</p>
           <div className="hero-actions">
@@ -92,10 +91,9 @@ function Home() {
     </div></section>
 
     <section className="section services-section" id="services"><div className="site-container">
-      <div className="section-intro"><div><span className="eyebrow"><span className="eyebrow-line" /> WHAT WE CREATE</span><h2>Two crafts.<br />One stage.</h2></div><p>From the first idea to the final applause, we bring every detail together with care and intention.</p></div>
+       <div className="section-intro"><div><span className="eyebrow"><span className="eyebrow-line" /> WHAT WE CREATE</span><h2>Events for<br />every occasion.</h2></div><p>From the first idea to the final applause, we bring every detail together with care and intention.</p></div>
       <div className="service-grid">
         <article className="service-column"><div className="service-top"><span>01</span><span className="service-symbol">✳</span></div><h3>Events</h3><ul>{events.map((item) => <li key={item}>{item}<ArrowUpRight size={17} /></li>)}</ul></article>
-        <article className="service-column"><div className="service-top"><span>02</span><span className="service-symbol">✦</span></div><h3>Production</h3><ul>{production.map((item) => <li key={item}>{item}<ArrowUpRight size={17} /></li>)}</ul></article>
       </div>
       <p className="services-quote">“We don't just produce events. We compose moments — where light, sound, story and silence conspire to leave a room different than they found it.”</p>
     </div></section>
@@ -116,7 +114,7 @@ function Home() {
     </div></section>
 
     <section className="section contact-section" id="contact"><div className="site-container contact-inner"><div><span className="eyebrow"><span className="eyebrow-line" /> GET IN TOUCH</span><h2>Let's build something<br /><em>unforgettable.</em></h2><Button asChild size="lg" className="brand-button"><Link to="/inquiry">Start an Inquiry <ArrowRight /></Link></Button></div>
-      <div className="contact-details"><div><span>TELEPHONE</span><a href="tel:+917339552366">+91 73395 52366</a></div><div><span>EMAIL</span><a href="mailto:ykrevents08@gmail.com">ykrevents08@gmail.com</a></div><div><span>STUDIO</span><p>YKR Events, Balaji Nagar,<br />IOB Colony, Maruthamalai Road,<br />Coimbatore — 641046</p></div></div>
+      <div className="contact-details"><div><span>TELEPHONE</span><a href="tel:+917339552366">+91 73395 52366</a></div><div><span>EMAIL</span><a href="mailto:ykrevents08@gmail.com">ykrevents08@gmail.com</a></div><div><span>STUDIO</span><p>YKR Events, Balaji Nagar,<br />IOB Colony, Maruthamalai Road,<br />Coimbatore — 641046</p></div><div className="contact-social"><span>FOLLOW US</span><a href="https://www.instagram.com/ykrevents?stkn=dGgzOWk0MWdlNjk4" target="_blank" rel="noopener noreferrer" aria-label="YKR Events on Instagram" title="Instagram"><Instagram size={25} strokeWidth={1.8} /></a></div></div>
     </div></section>
   </main>;
 }

@@ -7,3 +7,7 @@
 - [x] Add Goa Monsoon Premier League details and Times of India article alongside live video
 - [x] Verify updated pages on desktop and mobile
 - [x] Recolor the existing pages, typography, and logo backdrop to the supplied dark reference without changing content or layout
+- [x] Update home label and events-only services, including workshops and private events
+- [x] Add Instagram to the contact section
+- [ ] Send inquiry details automatically to ykrevents08@gmail.com — blocked until an email connection or sender domain is configured
+- [ ] Replace the top-right Claude logo — no such logo exists in the site header; need the user to identify the element

@@ -10,4 +10,4 @@
 - [x] Update home label and events-only services, including workshops and private events
 - [x] Add Instagram to the contact section
 - [ ] Send inquiry details automatically to ykrevents08@gmail.com — blocked until an email connection or sender domain is configured
-- [ ] Replace the top-right Claude logo — no such logo exists in the site header; need the user to identify the element
+- [x] Replace the starburst-like mark at the top right of the Events section with a star and give the header logo more breathing room

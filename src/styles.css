@@ -73,7 +73,7 @@ h1,h2,h3,p { margin-top: 0; }
 h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
 .site-header { height: 76px; position: sticky; top: 0; z-index: 40; background: var(--surface-logo); color: var(--on-dark); }
 .header-inner { height: 100%; display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 22px; }
-.logo-link { width: 88px; display: flex; align-items: center; }
+.logo-link { width: 66px; display: flex; align-items: center; }
 .logo-link img { display:block; width: 100%; height:auto; }
 .desktop-nav { display:flex; gap: clamp(18px,2.6vw,37px); align-items:center; white-space:nowrap; }
 .desktop-nav a { color: var(--on-dark-muted); font-size: 13px; font-weight: 600; transition: color .2s; }
@@ -180,7 +180,7 @@ h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
 .contact-social a:hover { color:var(--primary-foreground); background:var(--primary); border-color:var(--primary); }
 .site-footer { background:var(--surface-logo); color:var(--on-dark); padding:62px 0 22px; }
 .footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:50px; padding-bottom:60px; }
-.footer-brand img { width:135px; height:auto; display:block; }
+.footer-brand img { width:104px; height:auto; display:block; }
 .footer-brand p { color:var(--on-dark-muted); margin:16px 0 0; font-size:15px; }
 .footer-nav,.footer-contact { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
 .footer-nav>span,.footer-contact>span { color:var(--brand-yellow); margin:0 0 9px; }
@@ -234,7 +234,7 @@ h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
   .site-container { width:min(100% - 36px,1200px); }
   .site-header { height:66px; }
   .header-inner { grid-template-columns:minmax(0,1fr) auto auto; gap:12px; }
-  .logo-link { width:70px; }
+  .logo-link { width:54px; }
   .desktop-nav { display:none; }
   .header-inquiry.brand-button { min-width:88px; height:36px; font-size:12px; }
   .mobile-menu-toggle { display:inline-flex; color:var(--on-dark); }

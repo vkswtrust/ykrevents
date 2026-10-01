@@ -9,5 +9,5 @@
 - [x] Recolor the existing pages, typography, and logo backdrop to the supplied dark reference without changing content or layout
 - [x] Update home label and events-only services, including workshops and private events
 - [x] Add Instagram to the contact section
-- [ ] Send inquiry details automatically to ykrevents08@gmail.com — blocked until an email connection or sender domain is configured
+- [x] Open Gmail with a prefilled inquiry addressed to ykrevents08@gmail.com for the visitor to review and send
 - [x] Replace the starburst-like mark at the top right of the Events section with a star and give the header logo more breathing room

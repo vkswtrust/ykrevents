@@ -73,7 +73,7 @@ h1,h2,h3,p { margin-top: 0; }
 h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
 .site-header { height: 76px; position: sticky; top: 0; z-index: 40; background: var(--surface-logo); color: var(--on-dark); }
 .header-inner { height: 100%; display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 22px; }
-.logo-link { width: 106px; display: flex; align-items: center; }
+.logo-link { width: 88px; display: flex; align-items: center; }
 .logo-link img { display:block; width: 100%; height:auto; }
 .desktop-nav { display:flex; gap: clamp(18px,2.6vw,37px); align-items:center; white-space:nowrap; }
 .desktop-nav a { color: var(--on-dark-muted); font-size: 13px; font-weight: 600; transition: color .2s; }
@@ -123,7 +123,7 @@ h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
 .service-column { padding:32px 41px 36px; }
 .service-column + .service-column { border-left:1px solid var(--border); }
 .service-top { display:flex; justify-content:space-between; color:var(--primary); font-weight:800; font-size:11px; }
-.service-symbol { font-size:31px; line-height:1; color:var(--brand-pink); }
+.service-symbol { flex:none; color:var(--brand-pink); }
 .service-column h3 { font-size:33px; margin:30px 0 25px; }
 .service-column ul { list-style:none; margin:0; padding:0; }
 .service-column li { min-height:55px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:16px; color:var(--foreground); font-size:15px; font-weight:600; }
@@ -234,7 +234,7 @@ h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
   .site-container { width:min(100% - 36px,1200px); }
   .site-header { height:66px; }
   .header-inner { grid-template-columns:minmax(0,1fr) auto auto; gap:12px; }
-  .logo-link { width:84px; }
+  .logo-link { width:70px; }
   .desktop-nav { display:none; }
   .header-inquiry.brand-button { min-width:88px; height:36px; font-size:12px; }
   .mobile-menu-toggle { display:inline-flex; color:var(--on-dark); }

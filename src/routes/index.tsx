@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Instagram, Play, Sparkles, Target } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Instagram, Play, Sparkles, Star, Target } from "lucide-react";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import goa1 from "@/assets/goa-1.webp.asset.json";
@@ -93,7 +93,7 @@ function Home() {
     <section className="section services-section" id="services"><div className="site-container">
        <div className="section-intro"><div><span className="eyebrow"><span className="eyebrow-line" /> WHAT WE CREATE</span><h2>Events for<br />every occasion.</h2></div><p>From the first idea to the final applause, we bring every detail together with care and intention.</p></div>
       <div className="service-grid">
-        <article className="service-column"><div className="service-top"><span>01</span><span className="service-symbol">✳</span></div><h3>Events</h3><ul>{events.map((item) => <li key={item}>{item}<ArrowUpRight size={17} /></li>)}</ul></article>
+        <article className="service-column"><div className="service-top"><span>01</span><Star className="service-symbol" size={28} strokeWidth={1.7} aria-hidden="true" /></div><h3>Events</h3><ul>{events.map((item) => <li key={item}>{item}<ArrowUpRight size={17} /></li>)}</ul></article>
       </div>
       <p className="services-quote">“We don't just produce events. We compose moments — where light, sound, story and silence conspire to leave a room different than they found it.”</p>
     </div></section>

@@ -10,5 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Use the index route for the continuous-scroll YKR site and a separate inquiry route; this keeps the browsing experience natural while giving inquiries a focused page.
-- Store inquiries in Lovable Cloud with public insert-only access and no public reads; visitors can submit without exposing contact details.
+- Hand off inquiry form details to a prefilled Gmail compose window instead of submitting from the site; this lets visitors send from their own Gmail account without implying the site sent mail.
 - Serve user-supplied logo and Goa photos through asset pointers; this preserves authentic imagery without committing large binaries.

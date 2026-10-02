@@ -66,6 +66,18 @@
 * { box-sizing: border-box; border-color: var(--border); }
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 body { margin: 0; min-width: 320px; background: var(--background); color: var(--foreground); font-family: "DM Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+.custom-cursor { display:none; place-items:center; position:fixed; top:0; left:0; width:28px; height:28px; border:1px solid var(--brand-yellow); border-radius:50%; background:var(--surface-glass); z-index:100; pointer-events:none; opacity:0; transition:opacity .15s, width .18s, height .18s; }
+.custom-cursor.is-visible { opacity:1; }
+.custom-cursor.is-interactive { width:38px; height:38px; }
+.custom-cursor span { width:5px; height:5px; border-radius:50%; background:var(--brand-pink); }
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-enabled, html.custom-cursor-enabled * { cursor: none !important; }
+  .custom-cursor { display:grid; }
+}
+.brand-intro { position:fixed; inset:0; z-index:80; display:grid; place-items:center; background:var(--surface-logo); pointer-events:none; animation:brand-intro-clear 2.1s ease-in-out forwards; }
+.brand-intro img { display:block; width:clamp(140px,23vw,240px); height:auto; object-fit:contain; animation:brand-intro-rise 2.1s ease-in-out forwards; }
+@keyframes brand-intro-rise { 0%,30% { transform:translateY(0) scale(1); opacity:1; } 76% { transform:translateY(-37vh) scale(.42); opacity:1; } 100% { transform:translateY(-42vh) scale(.36); opacity:0; } }
+@keyframes brand-intro-clear { 0%,62% { opacity:1; } 100% { opacity:0; } }
 button, input, select, textarea { font: inherit; }
 a { text-decoration: none; }
 .site-container { width: min(100% - 72px, 1200px); margin-inline: auto; }
@@ -285,4 +297,4 @@ h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; letter-spacing: 0; }
   .hero h1 { font-size:50px; }
   .footer-grid { gap:20px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:.01ms!important; animation-duration:.01ms!important; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:.01ms!important; animation-duration:.01ms!important; } .brand-intro { display:none; } }

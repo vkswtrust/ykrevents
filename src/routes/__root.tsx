@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -121,11 +121,45 @@ function RootComponent() {
       <SiteHeader />
       <Outlet />
       <SiteFooter />
+      <CustomCursor />
       <a href="https://wa.me/917339552366" target="_blank" rel="noopener noreferrer" className="whatsapp-float" aria-label="Chat with YKR Events on WhatsApp" title="Chat on WhatsApp">
         <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 2.67C8.66 2.67 2.67 8.66 2.67 16.02c0 2.32.6 4.59 1.73 6.59L2.67 29.33l6.89-1.81a13.3 13.3 0 0 0 6.46 1.65c7.36 0 13.31-5.98 13.31-13.34 0-7.18-5.98-13.16-13.31-13.16Zm0 24.24c-2.03 0-4.02-.55-5.75-1.58l-.42-.25-4.09 1.07 1.09-3.99-.27-.41a10.96 10.96 0 0 1-1.67-5.73c0-6.12 4.98-11.1 11.11-11.1 6.12 0 11.1 4.98 11.1 11.1 0 6.12-4.98 10.89-11.1 10.89Zm6.09-8.18c-.33-.16-1.95-.96-2.25-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.16-1.39-.51-2.64-1.63-.98-.87-1.64-1.95-1.83-2.28-.19-.33-.02-.51.14-.67.15-.15.33-.38.49-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.72s1.17 3.16 1.33 3.38c.16.22 2.31 3.53 5.59 4.95.78.34 1.39.54 1.87.69.79.25 1.51.21 2.08.13.63-.09 1.95-.8 2.22-1.57.27-.77.27-1.43.19-1.57-.08-.14-.3-.22-.63-.38Z"/></svg>
       </a>
     </QueryClientProvider>
   );
+}
+
+function CustomCursor() {
+  const cursorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const cursor = cursorRef.current;
+    if (!cursor) return;
+    document.documentElement.classList.add("custom-cursor-enabled");
+    let frame = 0;
+    const move = (event: PointerEvent) => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
+        cursor.classList.add("is-visible");
+        cursor.classList.toggle("is-interactive", event.target instanceof Element && !!event.target.closest("a, button, input, textarea, select, [role='button']"));
+      });
+    };
+    const hide = () => cursor.classList.remove("is-visible");
+    window.addEventListener("pointermove", move);
+    document.addEventListener("pointerleave", hide);
+    window.addEventListener("blur", hide);
+    return () => {
+      cancelAnimationFrame(frame);
+      document.documentElement.classList.remove("custom-cursor-enabled");
+      window.removeEventListener("pointermove", move);
+      document.removeEventListener("pointerleave", hide);
+      window.removeEventListener("blur", hide);
+    };
+  }, []);
+
+  return <div ref={cursorRef} className="custom-cursor" aria-hidden="true"><span /></div>;
 }
 
 const navItems = [

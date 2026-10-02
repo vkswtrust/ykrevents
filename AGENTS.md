@@ -12,3 +12,4 @@
 - Use the index route for the continuous-scroll YKR site and a separate inquiry route; this keeps the browsing experience natural while giving inquiries a focused page.
 - Hand off inquiry form details to a prefilled Gmail compose window instead of submitting from the site; this lets visitors send from their own Gmail account without implying the site sent mail.
 - Serve user-supplied logo and Goa photos through asset pointers; this preserves authentic imagery without committing large binaries.
+- Keep the home-entry reveal on the index route and the pointer decoration in the shared shell; this limits the reveal to entry while the cursor covers both pages.

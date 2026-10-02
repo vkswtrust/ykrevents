@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Instagram, Play, Sparkles, Star, Target } from "lucide-react";
-import { useRef, useState } from "react";
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Instagram, Play, Star, Target } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/ykr-logo-clean.png.asset.json";
 import goa1 from "@/assets/goa-1.webp.asset.json";
 import goa2 from "@/assets/goa-2.webp.asset.json";
 import goa3 from "@/assets/goa-3.webp.asset.json";
@@ -59,7 +60,20 @@ function GoaCarousel() {
 }
 
 function Home() {
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    if (window.sessionStorage.getItem("ykr-intro-seen") || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShowIntro(false);
+    } else {
+      window.sessionStorage.setItem("ykr-intro-seen", "true");
+    }
+  }, []);
+
   return <main>
+    {showIntro && <div className="brand-intro" aria-hidden="true" onAnimationEnd={(event) => {
+      if (event.target === event.currentTarget) setShowIntro(false);
+    }}><img src={logo.url} alt="" /></div>}
     <section className="hero" id="home">
       <div className="hero-photo" style={{ backgroundImage: `url(${goa3.url})` }} aria-hidden="true" />
       <div className="hero-shade" aria-hidden="true" />
@@ -86,7 +100,7 @@ function Home() {
       <div className="section-intro vision-intro"><div><span className="eyebrow"><span className="eyebrow-line" /> OUR VISION</span><h2>A stage, and<br />a sanctuary.</h2></div><p>YKR exists at the intersection of spectacle and sincerity. Our work is built on two unwavering convictions.</p></div>
       <div className="vision-grid">
         <article className="vision-item"><div className="vision-icon"><Target size={23} strokeWidth={1.6} /></div><span className="item-number">01 / OUR VISION</span><h3>Make room for brilliance.</h3><p>To be the most celebrated stage where grandeur meets soul — and where young talent is seen, celebrated, and transformed.</p></article>
-        <article className="vision-item"><div className="vision-icon"><Sparkles size={23} strokeWidth={1.6} /></div><span className="item-number">02 / OUR MISSION</span><h3>Give talent the stage.</h3><p>To craft elegant, soulful events that move people — and to actively seek, nurture, and elevate young talent on the grandest possible stage.</p></article>
+        <article className="vision-item"><div className="vision-icon"><Star size={19} strokeWidth={1.7} /></div><span className="item-number">02 / OUR MISSION</span><h3>Give talent the stage.</h3><p>To craft elegant, soulful events that move people — and to actively seek, nurture, and elevate young talent on the grandest possible stage.</p></article>
       </div>
     </div></section>
 

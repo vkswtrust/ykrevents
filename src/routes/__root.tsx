@@ -136,15 +136,29 @@ function CustomCursor() {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     const cursor = cursorRef.current;
     if (!cursor) return;
-    document.documentElement.classList.add("custom-cursor-enabled");
     let frame = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let active = false;
+    const animate = () => {
+      currentX += (targetX - currentX) * 0.18;
+      currentY += (targetY - currentY) * 0.18;
+      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
+      frame = requestAnimationFrame(animate);
+    };
     const move = (event: PointerEvent) => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
-        cursor.classList.add("is-visible");
-        cursor.classList.toggle("is-interactive", event.target instanceof Element && !!event.target.closest("a, button, input, textarea, select, [role='button']"));
-      });
+      targetX = event.clientX;
+      targetY = event.clientY;
+      if (!active) {
+        currentX = targetX;
+        currentY = targetY;
+        active = true;
+        frame = requestAnimationFrame(animate);
+      }
+      cursor.classList.add("is-visible");
+      cursor.classList.toggle("is-interactive", event.target instanceof Element && !!event.target.closest("a, button, input, textarea, select, [role='button']"));
     };
     const hide = () => cursor.classList.remove("is-visible");
     window.addEventListener("pointermove", move);
@@ -152,7 +166,6 @@ function CustomCursor() {
     window.addEventListener("blur", hide);
     return () => {
       cancelAnimationFrame(frame);
-      document.documentElement.classList.remove("custom-cursor-enabled");
       window.removeEventListener("pointermove", move);
       document.removeEventListener("pointerleave", hide);
       window.removeEventListener("blur", hide);

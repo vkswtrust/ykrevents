@@ -11,7 +11,8 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/ykr-logo-clean.png.asset.json";
+import logoSrc from "@/assets/ykr-logo-clean.png";
+const logo = { url: logoSrc };
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";

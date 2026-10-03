@@ -88,7 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-       { rel: "icon", href: "/favicon.png", type: "image/png" },
+       { rel: "icon", href: "/favicon-ykr.png", type: "image/png", sizes: "64x64" },
        { rel: "preconnect", href: "https://fonts.googleapis.com" },
        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" },
@@ -131,12 +131,15 @@ function RootComponent() {
 }
 
 function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    const cursor = cursorRef.current;
-    if (!cursor) return;
+    const ring = ringRef.current;
+    const dot = dotRef.current;
+    if (!ring || !dot) return;
+    document.documentElement.classList.add("custom-cursor-enabled");
     let frame = 0;
     let targetX = 0;
     let targetY = 0;
@@ -146,22 +149,27 @@ function CustomCursor() {
     const animate = () => {
       currentX += (targetX - currentX) * 0.18;
       currentY += (targetY - currentY) * 0.18;
-      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
+      ring.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
       frame = requestAnimationFrame(animate);
     };
     const move = (event: PointerEvent) => {
       targetX = event.clientX;
       targetY = event.clientY;
+      dot.style.transform = `translate3d(${targetX}px, ${targetY}px, 0) translate(-50%, -50%)`;
       if (!active) {
         currentX = targetX;
         currentY = targetY;
         active = true;
         frame = requestAnimationFrame(animate);
       }
-      cursor.classList.add("is-visible");
-      cursor.classList.toggle("is-interactive", event.target instanceof Element && !!event.target.closest("a, button, input, textarea, select, [role='button']"));
+      ring.classList.add("is-visible");
+      dot.classList.add("is-visible");
+      ring.classList.toggle("is-interactive", event.target instanceof Element && !!event.target.closest("a, button, input, textarea, select, [role='button']"));
     };
-    const hide = () => cursor.classList.remove("is-visible");
+    const hide = () => {
+      ring.classList.remove("is-visible");
+      dot.classList.remove("is-visible");
+    };
     window.addEventListener("pointermove", move);
     document.addEventListener("pointerleave", hide);
     window.addEventListener("blur", hide);
@@ -170,10 +178,11 @@ function CustomCursor() {
       window.removeEventListener("pointermove", move);
       document.removeEventListener("pointerleave", hide);
       window.removeEventListener("blur", hide);
+      document.documentElement.classList.remove("custom-cursor-enabled");
     };
   }, []);
 
-  return <div ref={cursorRef} className="custom-cursor" aria-hidden="true"><span /></div>;
+  return <><div ref={ringRef} className="custom-cursor-ring" aria-hidden="true" /><div ref={dotRef} className="custom-cursor-dot" aria-hidden="true" /></>;
 }
 
 const navItems = [

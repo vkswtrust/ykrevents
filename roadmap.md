@@ -12,3 +12,5 @@
 - [x] Open Gmail with a prefilled inquiry addressed to ykrevents08@gmail.com for the visitor to review and send
 - [x] Replace the starburst-like mark at the top right of the Events section with a star and give the header logo more breathing room
 - [x] Show the brand logo before revealing the home page, use a small Mission star, and add a circle-and-dot mouse cursor
+- [x] Show the full YKR logo in the Chrome tab and make the dot the pointer with a trailing circle
+- [x] Check bundled images and both pages in the preview for deployment readiness

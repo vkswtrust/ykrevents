@@ -14,8 +14,10 @@ import goa4Src from "@/assets/goa-4.webp";
 const goa4 = { url: goa4Src };
 import goa5Src from "@/assets/goa-5.webp";
 const goa5 = { url: goa5Src };
+import goa6Src from "@/assets/goa-6.webp";
+const goa6 = { url: goa6Src };
 
-const photos = [goa1.url, goa2.url, goa3.url, goa4.url, goa5.url];
+const photos = [goa1.url, goa2.url, goa3.url, goa4.url, goa5.url, goa6.url];
 const categories = ["Corporate", "Cultural", "Educational", "Hybrid", "Film", "Music", "Live"];
 const events = ["Corporate Events", "Entertainment & Cultural Events", "Educational", "Institutional Events", "Hybrid Events", "Workshops", "Private Events"];
 

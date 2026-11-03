@@ -83,7 +83,7 @@ function Home() {
       if (event.target === event.currentTarget) setShowIntro(false);
     }}><div className="brand-intro-content"><img src={logo.url} alt="" /><div className="brand-intro-track"><span /></div></div></div>}
     <section className="hero" id="home">
-      <div className="hero-photo" style={{ backgroundImage: `url(${goa3.url})` }} aria-hidden="true" />
+      <div className="hero-photo" style={{ backgroundImage: `url(${goa4.url})` }} aria-hidden="true" />
       <div className="hero-shade" aria-hidden="true" />
       <div className="site-container hero-inner">
         <div className="hero-content">
